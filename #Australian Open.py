@@ -56,8 +56,9 @@ def match_making():
         # if there is one name left in the list, add it to the last couple
         if len(players_list) == 1:
             couples[-1] += (players_list[0],)
-            
-    print(couples)
+        for couples in couples:
+    print(couples)    
+    
 match_making()
 
 # player1 = Players("Roger Federer", "Switzerland", 5.0)
