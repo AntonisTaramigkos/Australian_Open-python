@@ -51,11 +51,8 @@ def match_making():
         players_list.remove(names[1])
 
         # add the pair of names to the couples list
-        couples.append((names[0], names[1]))
-
-        # if there is one name left in the list, add it to the last couple
-        if len(players_list) == 1:
-            couples[-1] += (players_list[0],)
+        couples.append((names[0], names[1]))
+        
         for couples in couples:
     print(couples)    
     
