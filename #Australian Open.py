@@ -32,7 +32,7 @@ class Players():
         return "{:<25}  {:<15}  {:>10.1f}".format(self.name, self.country, self.world_ranking)
         pass
 
-#Match Making#
+#Match Making Best Players#
 #From a List/Dict or SQL db we add the players in the a list
 #the with a radom choose we add them in a new list Match_Making
 #then we take the duos and with a print we shaw the pairs
@@ -59,13 +59,32 @@ def match_making():
     
 match_making()
 
-# player1 = Players("Roger Federer", "Switzerland", 5.0)
-# player2 = Players("Antonis Taramigkos","Greece", 10)
+####Edo exo balei tis 7 omades kai prospa8o na paro ena onoma apo ka8e mia kai na kano 
+#### kainourgies .... Den douleuvei!!!
 
-# print the player's information
-# print(player1)
-# print(player2)
-# match_making()
+
+def match_making_lower_rank():
+    team1 = ['name11', 'name12', 'name13', 'name14', 'name15', 'name16', 'name17', 'name18', 'name19', 'name110', 'name111', 'name112', 'name113', 'name114', 'name115', 'name116']
+    team2 = ['name21', 'name22', 'name23', 'name24', 'name25', 'name26', 'name27', 'name28', 'name29', 'name210', 'name211', 'name212', 'name213', 'name214', 'name215', 'name216']
+    team3 = ['name31', 'name32', 'name33', 'name34', 'name35', 'name36', 'name37', 'name38', 'name39', 'name310', 'name311', 'name312', 'name313', 'name314', 'name315', 'name316']
+    team4 = ['name41', 'name42', 'name43', 'name44', 'name45', 'name46', 'name47', 'name48', 'name49', 'name410', 'name411', 'name412', 'name413', 'name414', 'name415', 'name416']
+    team5 = ['name51', 'name52', 'name53', 'name54', 'name55', 'name56', 'name57', 'name58', 'name59', 'name510', 'name511', 'name512', 'name513', 'name514', 'name515', 'name516']
+    team6 = ['name61', 'name62', 'name63', 'name64', 'name65', 'name66', 'name67', 'name68', 'name69', 'name610', 'name611', 'name612', 'name613', 'name614', 'name615', 'name616']
+    team7 = ['name71', 'name72', 'name73', 'name74', 'name75', 'name76', 'name77', 'name78', 'name79', 'name710', 'name711', 'name712', 'name713', 'name714', 'name715', 'name716']
+
+    teams = [team1, team2, team3, team4, team5, team6, team7]
+    new_teams = [[] for _ in range(len(teams))]
+
+    while all(teams):  # Continue until any one of the original lists becomes empty
+        for i, team in enumerate(teams):
+            if team:  # Only choose a name if the team still has members
+                name = random.choice(team)
+                new_teams[i].append(name)
+                team.remove(name)
+
+    print(new_teams)
+    for i in new_teams:
+        print("\n",i)
 
 
 
