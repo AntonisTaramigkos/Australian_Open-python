@@ -42,7 +42,7 @@ def match_making():
     print(players_list)
     couples = []
 
-    while len(players_list1) > 1:
+    while len(players_list) > 1:
         # randomly select two names from the list
         names = random.sample(players_list, 2)
 
@@ -51,10 +51,11 @@ def match_making():
         players_list.remove(names[1])
 
         # add the pair of names to the couples list
-        couples.append((names[0], names[1]))
+        couples.append((names[0], names[1]))
+
         
         for couples in couples:
-    print(couples)    
+            print(couples)    
     
 match_making()
 
