@@ -57,15 +57,31 @@ def match_making():
         for couples in couples:
             print(couples)    
     
-match_making()
-
-# player1 = Players("Roger Federer", "Switzerland", 5.0)
-# player2 = Players("Antonis Taramigkos","Greece", 10)
-
-# print the player's information
-# print(player1)
-# print(player2)
 # match_making()
+
+####Edo epidi ta exo ftiaxei xexorista exo dosei idies metablites met to proigoumeno fuction!!
+#### MHN MPERDEFTITE!!!
+#### PS: 8a ta dior8oso me tin proti eukairia !
+
+def make_matches(all_teams):
+    match_making = []
+    for i in range(7):
+        match = []
+        for team in all_teams:
+            name = random.sample(team, 1)[0]
+            match.append(name)
+            team.remove(name)
+        match_making.append(match)
+    return match_making
+
+
+all_teams = [team1, team2, team3, team4, team5, team6, team7]
+
+match_making = make_matches(all_teams)
+
+print(match_making) ### Prepei na dior8oso tin ektiposi na fainete ka8e nea omada xexorista!!
+make_matches(all_teams)
+
 
 
 
