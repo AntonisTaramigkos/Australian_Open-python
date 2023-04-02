@@ -1,6 +1,4 @@
-###Na doyme an doulebei to match making tou protou girou gia ola ta group
-### ka8e fora poy trexei moy allazei ta apotelesmata
-## mallon to index prepi na to trexo me ena for loop?
+#Austalian_Open
 
 import random
   
