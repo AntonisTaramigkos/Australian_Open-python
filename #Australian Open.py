@@ -81,3 +81,26 @@ for num in range(8):
     print(make_matches(match_making ,num))
 
 print(match_making)
+
+#Edo exo ftaxei to def poy 8a bgazei toys winners apo ta zeygaria
+#Akoma den xero an xreiazete na to metrepso se Class
+#Basika prepei na doyme genikotera ton kodika an 8elei na metatrepe kati se Class
+#o Kodikas den einai olokliromenos doulebei prosorna me import ton dedomenon 
+#prepei na ton ftiaxo etsi oste na pairne ta apotelesma apoto match_makng isos me mia 
+#global metablti to Couples?!
+
+
+def winners(): #Edo me kapoion tropo prepei na balo parametro to index apo ka8e couple
+    couples = [('name49', 'Felix Auger-Aliassime'), ('name37', 'name616'), ('name12', 'name516'), ('name213', 'name714')] # tin lista tin pira copy paste apo to apotelesma tis colsole
+    winners_list = []
+    
+    for couple in range(len(couples)):
+        winner = random.sample(couples[couple], 1)# to samole exei 2 orismata tin lista pou 8a parei to stixio kai ton ari8mo ton stixion
+        winners_list.append(winner[0])
+        print(f"Στο μάτς με αντιπάλους τον {couples[couple][0]} και τον {couples[couple][1]}  νικητής ενα ο {winner[0]}")
+    
+    winners_str = ", ".join(winners_list)
+    print("Νικητές του ομίλου:", winners_str)
+
+winners()
+
