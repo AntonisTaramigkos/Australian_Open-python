@@ -1,6 +1,11 @@
-#Austalian_Open
-
 import random
+import os
+
+def clear_screen():
+    if os.name == "nt":  # If the operating system is Windows
+        os.system("cls")
+    else:  # If the operating system is Unix-based (Linux or macOS)
+        os.system("clear")
   
 
 aopen_top_16 = {"Rafael Nadal":("Spain",1),
@@ -20,7 +25,7 @@ aopen_top_16 = {"Rafael Nadal":("Spain",1),
 "Jannik Sinner":("Italy",15),
 "Frances Tiafoe":("United States of America",16)}
 
-top_players_list1 = []
+
 top_players_list = list(aopen_top_16.keys())
 # print("TOP PLAYERLIST:",top_players_list)
 
@@ -73,34 +78,73 @@ def make_matches(match_making, match_index):
         
     for couple in couples:
          print(couple)    
-    # print(couples)
-
-#make_matches(match_making, 2)
-
-for num in range(8):
-    print(make_matches(match_making ,num))
-
-print(match_making)
-
-#Edo exo ftaxei to def poy 8a bgazei toys winners apo ta zeygaria
-#Akoma den xero an xreiazete na to metrepso se Class
-#Basika prepei na doyme genikotera ton kodika an 8elei na metatrepe kati se Class
-#o Kodikas den einai olokliromenos doulebei prosorna me import ton dedomenon 
-#prepei na ton ftiaxo etsi oste na pairne ta apotelesma apoto match_makng isos me mia 
-#global metablti to Couples?!
+    return(couples)
 
 
-def winners(): #Edo me kapoion tropo prepei na balo parametro to index apo ka8e couple
-    couples = [('name49', 'Felix Auger-Aliassime'), ('name37', 'name616'), ('name12', 'name516'), ('name213', 'name714')] # tin lista tin pira copy paste apo to apotelesma tis colsole
+##### for num in range(8):
+    # print(make_matches(match_making ,num))
+
+
+
+
+    
+def winners(couples):
     winners_list = []
     
     for couple in range(len(couples)):
-        winner = random.sample(couples[couple], 1)# to samole exei 2 orismata tin lista pou 8a parei to stixio kai ton ari8mo ton stixion
+        winner = random.sample(couples[couple], 1)
         winners_list.append(winner[0])
-        print(f"Στο μάτς με αντιπάλους τον {couples[couple][0]} και τον {couples[couple][1]}  νικητής ενα ο {winner[0]}")
+        print(f"The winner of the {couples[couple][0]} vs {couples[couple][1]} match is {winner[0]}")
     
     winners_str = ", ".join(winners_list)
-    print("Νικητές του ομίλου:", winners_str)
+    print("**************")
+    print("List of winners:", winners_str)
+    print("**************")
+  
+    # for num in range(8):
+    #     couples = make_matches(match_making, num)
+    #     winners(couples)
 
-winners()
 
+def main():
+    all_teams = [team0, team1, team2, team3, team4, team5, team6, team7]
+    match_making = []
+
+    while True:
+        print("\nΕπιλέξτε ενα απο τα παρακάτω:")
+        print("1. Δειτε τους ομίλους (def omiloi)")
+        print("2. Δειτε τα ματς του ΠΡΩΤΟΥ γύρου (def make_matches)")
+        print("3. Δείτε τους νικητές (def winners)")
+        print("4. Eξοδος")
+
+        choice = input("Διαλέξτε τον αριθμό της επιλογής σας: ")
+        clear_screen() #### Ka8arizo tin o8oni!
+
+        if choice == "1":
+            match_making = omiloi(all_teams)
+            for i, match in enumerate(match_making, start=1):
+                print(f"Όμιλος {i}: {match}")
+        # if choice == "1":
+        #     match_making = omiloi(all_teams)
+        #     print(match_making)
+        elif choice == "2":
+            if not match_making:
+                print("Πρέπει να κάνετε δείτε τους ομίλους πρώτα!! (option 1).")
+            else:
+                for num in range(8):
+                    make_matches(match_making, num)
+        elif choice == "3":
+            if not match_making:
+                print("Πρέπει να κάνετε δείτε τους ομίλους πρώτα!! (option 1).")
+            else:
+                for num in range(8):
+                    couples = make_matches(match_making, num)
+                    winners(couples)
+        elif choice == "4":
+            break
+        else:
+            print("Λανθασμένη Επιλογή!! Παρακαλώ επιλέξτε  (1, 2, 3, or 4).")
+
+
+if __name__ == "__main__":
+    main()
